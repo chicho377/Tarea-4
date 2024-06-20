@@ -81,24 +81,26 @@ int main(int argc, char** argv) {
             acumuladoNetoProfesionales += salariosNetos[numEmpleados];
         }
         
-        // Mostrar los datos del empleado
-        printf("\nDatos del empleado:\n");
-        printf("--------------------------------------------------\n");
-        printf("Cedula: %s\n", cedula);
-        printf("Nombre: %s\n", nombre);
-        printf("Tipo Empleado: %d\n", tipo);
-        printf("Salario por Hora: %.2lf\n", salarioPorHora);
-        printf("Cantidad de Horas: %.2lf\n", horasTrabajadas);
-        printf("--------------------------------------------------\n");
-        printf("Salario Ordinario: %.2lf\n", salarioOrdinario);
-        printf("Aumento: %.2lf\n", aumento);
-        printf("Salario Bruto: %.2lf\n", salarioBruto);
-        printf("Deduccion CCSS: %.2lf\n", deduccionCCSS);
-        printf("Salario Neto: %.2lf\n", salarioNeto);
-        printf("--------------------------------------------------\n");
-        
-        printf("\n¿Desea ingresar otro empleado? (1-Si, 0-No): ");
-        scanf("%d", &opcion);
+        // mostrar los datos del empleado
+        cout << "\nDatos del empleado:\n";
+        cout << "--------------------------------------------------\n";
+        cout << "Cedula: " << cedulas[numEmpleados] << "\n";
+        cout << "Nombre: " << nombres[numEmpleados] << "\n";
+        cout << "Tipo Empleado: " << tipos[numEmpleados] << "\n";
+        cout << "Salario por Hora: " << salariosPorHora[numEmpleados] << "\n";
+        cout << "Cantidad de Horas: " << horasTrabajadas[numEmpleados] << "\n";
+        cout << "--------------------------------------------------\n";
+        cout << "Salario Ordinario: " << salariosOrdinarios[numEmpleados] << "\n";
+        cout << "Aumento: " << aumentos[numEmpleados] << "\n";
+        cout << "Salario Bruto: " << salariosBrutos[numEmpleados] << "\n";
+        cout << "Deduccion CCSS: " << deduccionesCCSS[numEmpleados] << "\n";
+        cout << "Salario Neto: " << salariosNetos[numEmpleados] << "\n";
+        cout << "--------------------------------------------------\n";
+
+        cout << "\n¿Desea ingresar otro empleado? (1-Si, 0-No): ";
+        cin >> opcion;
+
+        numEmpleados++;
 	}while(opcion != 0);
     
     printf("\nEstadisticas finales:\n");
