@@ -4,23 +4,33 @@
 
 int main(int argc, char** argv) {
 	
-	//Variables
-	char cedula[20];
-    char nombre[50];
-    int tipo;
-    double salarioPorHora;
-    double horasTrabajadas;
-    double salarioOrdinario;
-    double aumento;
-    double salarioBruto;
-    double deduccionCCSS;
-    double salarioNeto;
+	// constante
+    const int MAX_EMPLEADOS = 100;
 
+    // arrays
+    string cedulas[MAX_EMPLEADOS];
+    string nombres[MAX_EMPLEADOS];
+    int tipos[MAX_EMPLEADOS];
+    double salariosPorHora[MAX_EMPLEADOS];
+    double horasTrabajadas[MAX_EMPLEADOS];
+    double salariosOrdinarios[MAX_EMPLEADOS];
+    double aumentos[MAX_EMPLEADOS];
+    double salariosBrutos[MAX_EMPLEADOS];
+    double deduccionesCCSS[MAX_EMPLEADOS];
+    double salariosNetos[MAX_EMPLEADOS];
+
+	// variables
+    int numEmpleados = 0;
     int opcion;
     int cantOperarios = 0, cantTecnicos = 0, cantProfesionales = 0;
     double acumuladoNetoOperarios = 0, acumuladoNetoTecnicos = 0, acumuladoNetoProfesionales = 0;
     
     do{
+    	if (numEmpleados >= MAX_EMPLEADOS) {
+            cout << "Se ha alcanzado el número máximo de empleados.\n";
+            break;
+        }
+    	
     	printf("Ingrese la cedula del empleado: ");
         scanf("%s", cedula);
 
