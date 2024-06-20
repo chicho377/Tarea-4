@@ -1,0 +1,101 @@
+Inicio
+    Definir cedula, nombre como cadena
+    Definir tipo, opcion como entero
+    Definir salarioPorHora, horasTrabajadas, salarioOrdinario, aumento, salarioBruto, deduccionCCSS, salarioNeto como real
+    Definir cantOperarios, cantTecnicos, cantProfesionales como entero
+    Definir acumuladoNetoOperarios, acumuladoNetoTecnicos, acumuladoNetoProfesionales como real
+
+    cantOperarios = 0
+    cantTecnicos = 0
+    cantProfesionales = 0
+    acumuladoNetoOperarios = 0.0
+    acumuladoNetoTecnicos = 0.0
+    acumuladoNetoProfesionales = 0.0
+
+    Hacer
+        Escribir("Ingrese la cedula del empleado: ")
+        Leer(cedula)
+        
+        Escribir("Ingrese el nombre del empleado: ")
+        Leer(nombre)
+        
+        Escribir("Ingrese el tipo de empleado (1-Operario, 2-Tecnico, 3-Profesional): ")
+        Leer(tipo)
+        
+        Escribir("Ingrese el salario por hora: ")
+        Leer(salarioPorHora)
+        
+        Escribir("Ingrese la cantidad de horas trabajadas: ")
+        Leer(horasTrabajadas)
+        
+        salarioOrdinario = salarioPorHora * horasTrabajadas
+        
+        Segun tipo Hacer
+            Caso 1:
+                aumento = salarioOrdinario * 0.15
+                cantOperarios = cantOperarios + 1
+            Caso 2:
+                aumento = salarioOrdinario * 0.10
+                cantTecnicos = cantTecnicos + 1
+            Caso 3:
+                aumento = salarioOrdinario * 0.05
+                cantProfesionales = cantProfesionales + 1
+            De Otro Modo:
+                Escribir("Tipo de empleado no válido.")
+                Continuar // Volver al inicio del bucle
+        Fin Segun
+        
+        salarioBruto = salarioOrdinario + aumento
+        deduccionCCSS = salarioBruto * 0.0917
+        salarioNeto = salarioBruto - deduccionCCSS
+
+        // Actualizamos los acumulados después de calcular el salario neto
+        Segun tipo Hacer
+            Caso 1:
+                acumuladoNetoOperarios = acumuladoNetoOperarios + salarioNeto
+            Caso 2:
+                acumuladoNetoTecnicos = acumuladoNetoTecnicos + salarioNeto
+            Caso 3:
+                acumuladoNetoProfesionales = acumuladoNetoProfesionales + salarioNeto
+        Fin Segun
+
+        Escribir("\nDatos del empleado:")
+        Escribir("Cedula: " + cedula)
+        Escribir("Nombre: " + nombre)
+        Escribir("Tipo Empleado: " + tipo)
+        Escribir("Salario por Hora: " + salarioPorHora)
+        Escribir("Cantidad de Horas: " + horasTrabajadas)
+        Escribir("Salario Ordinario: " + salarioOrdinario)
+        Escribir("Aumento: " + aumento)
+        Escribir("Salario Bruto: " + salarioBruto)
+        Escribir("Deducción CCSS: " + deduccionCCSS)
+        Escribir("Salario Neto: " + salarioNeto)
+        
+        Escribir("\n¿Desea ingresar otro empleado? (1-Si, 0-No): ")
+        Leer(opcion)
+    Mientras opcion <> 0
+
+    Escribir("\nEstadísticas finales:")
+    Escribir("Cantidad de Empleados Tipo Operarios: " + cantOperarios)
+    Escribir("Acumulado Salario Neto para Operarios: " + acumuladoNetoOperarios)
+    Si cantOperarios > 0 Entonces
+        Escribir("Promedio Salario Neto para Operarios: " + acumuladoNetoOperarios / cantOperarios)
+    De Otro Modo
+        Escribir("Promedio Salario Neto para Operarios: N/A")
+    
+    Escribir("Cantidad de Empleados Tipo Técnico: " + cantTecnicos)
+    Escribir("Acumulado Salario Neto para Técnicos: " + acumuladoNetoTecnicos)
+    Si cantTecnicos > 0 Entonces
+        Escribir("Promedio Salario Neto para Técnicos: " + acumuladoNetoTecnicos / cantTecnicos)
+    De Otro Modo
+        Escribir("Promedio Salario Neto para Técnicos: N/A")
+
+    Escribir("Cantidad de Empleados Tipo Profesional: " + cantProfesionales)
+    Escribir("Acumulado Salario Neto para Profesionales: " + acumuladoNetoProfesionales)
+    Si cantProfesionales > 0 Entonces
+        Escribir("Promedio Salario Neto para Profesionales: " + acumuladoNetoProfesionales / cantProfesionales)
+    De Otro Modo
+        Escribir("Promedio Salario Neto para Profesionales: N/A")
+
+    EsperarTecla() // Pausa antes de finalizar el programa
+Fin
