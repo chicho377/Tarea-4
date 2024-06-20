@@ -72,13 +72,13 @@ int main(int argc, char** argv) {
         deduccionesCCSS[numEmpleados] = salariosBrutos[numEmpleados] * 0.0917;
         salariosNetos[numEmpleados] = salariosBrutos[numEmpleados] - deduccionesCCSS[numEmpleados];
         
-        // Actualiza los acumulados después de calcular el salario neto
-        if (tipo == 1) {
-            acumuladoNetoOperarios += salarioNeto;
-        } else if (tipo == 2) {
-            acumuladoNetoTecnicos += salarioNeto;
-        } else if (tipo == 3) {
-            acumuladoNetoProfesionales += salarioNeto;
+        // actualiza los acumulados despues de calcular el salario neto
+        if (tipos[numEmpleados] == 1) {
+            acumuladoNetoOperarios += salariosNetos[numEmpleados];
+        } else if (tipos[numEmpleados] == 2) {
+            acumuladoNetoTecnicos += salariosNetos[numEmpleados];
+        } else if (tipos[numEmpleados] == 3) {
+            acumuladoNetoProfesionales += salariosNetos[numEmpleados];
         }
         
         // Mostrar los datos del empleado
