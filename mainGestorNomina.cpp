@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <conio.h>
+using namespace std;
 
 int main(int argc, char** argv) {
 	
@@ -31,23 +32,23 @@ int main(int argc, char** argv) {
             break;
         }
     	
-    	printf("Ingrese la cedula del empleado: ");
-        scanf("%s", cedula);
+    	cout << "Ingrese la cedula del empleado: ";
+        cin >> cedulas[numEmpleados];
 
-        printf("Ingrese el nombre del empleado: ");
-        getchar();  // Consumir el salto de línea pendiente en el buffer
-        fgets(nombre, sizeof(nombre), stdin);
+        cout << "Ingrese el nombre del empleado: ";
+        cin.ignore(); // consumir el salto de linea pendiente 
+        getline(cin, nombres[numEmpleados]);
 
-        printf("Ingrese el tipo de empleado (1-Operario, 2-Tecnico, 3-Profesional): ");
-        scanf("%d", &tipo);
+        cout << "Ingrese el tipo de empleado (1-Operario, 2-Tecnico, 3-Profesional): ";
+        cin >> tipos[numEmpleados];
 
-        printf("Ingrese el salario por hora: ");
-        scanf("%lf", &salarioPorHora);
+        cout << "Ingrese el salario por hora: ";
+        cin >> salariosPorHora[numEmpleados];
 
-        printf("Ingrese la cantidad de horas trabajadas: ");
-        scanf("%lf", &horasTrabajadas);
-        
-        salarioOrdinario = salarioPorHora * horasTrabajadas;
+        cout << "Ingrese la cantidad de horas trabajadas: ";
+        cin >> horasTrabajadas[numEmpleados];
+
+        salariosOrdinarios[numEmpleados] = salariosPorHora[numEmpleados] * horasTrabajadas[numEmpleados];
 
         switch(tipo) {
             case 1: // Operario
