@@ -50,27 +50,27 @@ int main(int argc, char** argv) {
 
         salariosOrdinarios[numEmpleados] = salariosPorHora[numEmpleados] * horasTrabajadas[numEmpleados];
 
-        switch(tipo) {
-            case 1: // Operario
-                aumento = salarioOrdinario * 0.15;
+        switch (tipos[numEmpleados]) {
+            case 1: // operario
+                aumentos[numEmpleados] = salariosOrdinarios[numEmpleados] * 0.15;
                 cantOperarios++;
                 break;
-            case 2: // Técnico
-                aumento = salarioOrdinario * 0.10;
+            case 2: // tecnico
+                aumentos[numEmpleados] = salariosOrdinarios[numEmpleados] * 0.10;
                 cantTecnicos++;
                 break;
-            case 3: // Profesional
-                aumento = salarioOrdinario * 0.05;
+            case 3: // profesional
+                aumentos[numEmpleados] = salariosOrdinarios[numEmpleados] * 0.05;
                 cantProfesionales++;
                 break;
             default:
-                printf("Tipo de empleado no valido.\n");
+                cout << "Tipo de empleado no valido.\n";
                 continue;
         }
         
-        salarioBruto = salarioOrdinario + aumento;
-        deduccionCCSS = salarioBruto * 0.0917;
-        salarioNeto = salarioBruto - deduccionCCSS;
+        salariosBrutos[numEmpleados] = salariosOrdinarios[numEmpleados] + aumentos[numEmpleados];
+        deduccionesCCSS[numEmpleados] = salariosBrutos[numEmpleados] * 0.0917;
+        salariosNetos[numEmpleados] = salariosBrutos[numEmpleados] - deduccionesCCSS[numEmpleados];
         
         // Actualiza los acumulados después de calcular el salario neto
         if (tipo == 1) {
