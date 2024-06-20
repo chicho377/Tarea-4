@@ -103,38 +103,38 @@ int main(int argc, char** argv) {
         numEmpleados++;
 	}while(opcion != 0);
     
-    printf("\nEstadisticas finales:\n");
-    printf("--------------------------------------------------\n");
-    printf("Cantidad de Empleados Tipo Operarios: %d\n", cantOperarios);
+    cout << "\nEstadisticas finales:\n";
+    cout << "--------------------------------------------------\n";
+    cout << "Cantidad de Empleados Tipo Operarios: " << cantOperarios << "\n";
     if (cantOperarios > 0) {
-    	printf("Acumulado Salario Neto para Operarios: %.2lf\n", acumuladoNetoOperarios);
-        printf("Promedio Salario Neto para Operarios: %.2lf\n", acumuladoNetoOperarios / cantOperarios);
+        cout << "Acumulado Salario Neto para Operarios: " << acumuladoNetoOperarios << "\n";
+        cout << "Promedio Salario Neto para Operarios: " << acumuladoNetoOperarios / cantOperarios << "\n";
     } else {
-    	printf("Acumulado Salario Neto para Operarios: N/A\n");
-        printf("Promedio Salario Neto para Operarios: N/A\n");
+        cout << "Acumulado Salario Neto para Operarios: N/A\n";
+        cout << "Promedio Salario Neto para Operarios: N/A\n";
     }
-    
-    printf("--------------------------------------------------\n");
-    printf("Cantidad de Empleados Tipo Tecnico: %d\n", cantTecnicos);
-    if (cantTecnicos > 0) {
-    	printf("Acumulado Salario Neto para Tecnicos: %.2lf\n", acumuladoNetoTecnicos);
-        printf("Promedio Salario Neto para Tecnicos: %.2lf\n", acumuladoNetoTecnicos / cantTecnicos);
-    } else {
-    	printf("Acumulado Salario Neto para Tecnicos: N/A\n");
-        printf("Promedio Salario Neto para Tecnicos: N/A\n");
-    }
-    
-    printf("--------------------------------------------------\n");
-    printf("Cantidad de Empleados Tipo Profesional: %d\n", cantProfesionales);
-    if (cantProfesionales > 0) {
-    	printf("Acumulado Salario Neto para Profesionales: %.2lf\n", acumuladoNetoProfesionales);
-        printf("Promedio Salario Neto para Profesionales: %.2lf\n", acumuladoNetoProfesionales / cantProfesionales);
-    } else {
-    	printf("Acumulado Salario Neto para Profesionales: N/A\n");
-        printf("Promedio Salario Neto para Profesionales: N/A\n");
-    }
-    printf("--------------------------------------------------\n");
 
+    cout << "--------------------------------------------------\n";
+    cout << "Cantidad de Empleados Tipo Tecnico: " << cantTecnicos << "\n";
+    if (cantTecnicos > 0) {
+        cout << "Acumulado Salario Neto para Tecnicos: " << acumuladoNetoTecnicos << "\n";
+        cout << "Promedio Salario Neto para Tecnicos: " << acumuladoNetoTecnicos / cantTecnicos << "\n";
+    } else {
+        cout << "Acumulado Salario Neto para Tecnicos: N/A\n";
+        cout << "Promedio Salario Neto para Tecnicos: N/A\n";
+    }
+
+    cout << "--------------------------------------------------\n";
+    cout << "Cantidad de Empleados Tipo Profesional: " << cantProfesionales << "\n";
+    if (cantProfesionales > 0) {
+        cout << "Acumulado Salario Neto para Profesionales: " << acumuladoNetoProfesionales << "\n";
+        cout << "Promedio Salario Neto para Profesionales: " << acumuladoNetoProfesionales / cantProfesionales << "\n";
+    } else {
+        cout << "Acumulado Salario Neto para Profesionales: N/A\n";
+        cout << "Promedio Salario Neto para Profesionales: N/A\n";
+    }
+    cout << "--------------------------------------------------\n";
+    
     getch(); // Pausa antes de finalizar el programa
     
 	return 0;
