@@ -28,8 +28,7 @@ int main(int argc, char** argv) {
     double acumuladoNetoOperarios = 0, acumuladoNetoTecnicos = 0, acumuladoNetoProfesionales = 0;
 
     do {
-        system("CLS"); // limpiar pantalla (en Windows)
-        // system("clear"); // usar en Unix/Linux
+        system("CLS"); // limpiar pantalla
         
         cout << "Menu Principal:\n";
         cout << "1. Agregar empleado\n";
@@ -41,8 +40,7 @@ int main(int argc, char** argv) {
         cout << "Ingrese una opcion: ";
         cin >> opcion;
 
-        system("CLS"); // limpiar pantalla (en Windows)
-        // system("clear"); // usar en Unix/Linux
+        system("CLS"); // limpiar pantalla 
 
         switch (opcion) {
             case 1: {
